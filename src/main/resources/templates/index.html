@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Hospital Management System</title>
 </head>
 <body>
-    <h1>Hospital Management System is running successfully!</h1>
+
+<h1>Hospital Management System</h1>
+
+<h2>Patients List</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Disease</th>
+        <th>Ward</th>
+    </tr>
+
+    <tr th:each="patient : ${patients}">
+        <td th:text="${patient.id}"></td>
+        <td th:text="${patient.name}"></td>
+        <td th:text="${patient.age}"></td>
+        <td th:text="${patient.disease}"></td>
+        <td th:text="${patient.ward}"></td>
+    </tr>
+
+</table>
+
 </body>
 </html>

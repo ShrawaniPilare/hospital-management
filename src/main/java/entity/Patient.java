@@ -12,38 +12,30 @@ public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long dbId;
 
+    private String id;
     private String name;
     private int age;
     private String disease;
-    private String contact;
-    private String wardName;
+    private String ward;
 
-    // Default Constructor
     public Patient() {
     }
 
-    // Parameterized Constructor
-    public Patient(String name, int age,
-                   String disease,
-                   String contact,
-                   String wardName) {
-
-        this.name = name;
-        this.age = age;
-        this.disease = disease;
-        this.contact = contact;
-        this.wardName = wardName;
+    public Long getDbId() {
+        return dbId;
     }
 
-    // Getters and Setters
+    public void setDbId(Long dbId) {
+        this.dbId = dbId;
+    }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -71,19 +63,11 @@ public class Patient {
         this.disease = disease;
     }
 
-    public String getContact() {
-        return contact;
+    public String getWard() {
+        return ward;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
-    public String getWardName() {
-        return wardName;
-    }
-
-    public void setWardName(String wardName) {
-        this.wardName = wardName;
+    public void setWard(String ward) {
+        this.ward = ward;
     }
 }

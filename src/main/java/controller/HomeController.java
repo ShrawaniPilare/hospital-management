@@ -13,14 +13,8 @@ public class HomeController {
     @Autowired
     private PatientRepository repository;
 
-    @GetMapping("/")
-    public String home(Model model){
-
-        model.addAttribute(
-            "patients",
-            repository.findAll()
-        );
-
+      @GetMapping("/")
+    public String home(Model model) {
         return "index";
     }
 }

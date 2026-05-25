@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<title>Patients</title>
+    <title>Patients</title>
 </head>
 
 <body>
@@ -11,19 +12,21 @@
 <table border="1">
 
 <tr>
-<th>ID</th>
-<th>Name</th>
-<th>Age</th>
-<th>Disease</th>
-<th>Contact</th>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Disease</th>
+    <th>Contact</th>
+    <th>Ward</th>
 </tr>
 
 <tr th:each="patient : ${patients}">
-<td th:text="${patient.id}"></td>
-<td th:text="${patient.name}"></td>
-<td th:text="${patient.age}"></td>
-<td th:text="${patient.disease}"></td>
-<td th:text="${patient.contact}"></td>
+    <td th:text="${patient.id}"></td>
+    <td th:text="${patient.name}"></td>
+    <td th:text="${patient.age}"></td>
+    <td th:text="${patient.disease}"></td>
+    <td th:text="${patient.contact}"></td>
+    <td th:text="${patient.wardName}"></td>
 </tr>
 
 </table>
